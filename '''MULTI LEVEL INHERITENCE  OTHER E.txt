@@ -1,0 +1,20 @@
+'''MULTI LEVEL INHERITENCE  OTHER EXAMPLE'''
+class Input:
+   def __init__(self):
+     self.num1=float(input("Enter numl:"))
+     self.num2=float(input("Enter num2:"))
+class operate(Input):
+   def __init__ (self):
+    super().__init__()
+   def add(self):
+     return self.num1  +  self.num2
+   def mul(self):
+     return self.num1 * self.num2
+class result(operate):
+     def __init__(self):
+         super().__init__()
+     def display(self):
+        print(f"Sum:{self.add()}")
+        print(f"Multiply:{self.mul()}")
+r=result()
+r.display()
