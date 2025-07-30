@@ -1,0 +1,38 @@
+'''multi level inheritence
+  parent(super class)
+       |
+    child(class) 
+       |
+    child(sub class)'''
+class intern:#super
+    def __init__(self,name):
+         self.name=name
+    def display_intern(self):
+        print(f"name:{self.name}")
+class employee(intern):#class
+    def __init__(self,name,emp_id):
+        super().__init__(name)
+        self.emp_id=emp_id
+    def display_employee(self):
+        print(f"Employee id:{self.emp_id}")
+class manager(employee):#sub class
+    def __init__(self, name, emp_id, dept):
+       super().__init__(name, emp_id)
+       self.dept=dept
+    def display_manager(self):
+      print (f"Department:{self.dept}")
+name=input("Enter name:")
+emp_id= input("enter employee id: ")
+dept= input("Enter department: ")
+m= manager (name, emp_id, dept)
+m.display_intern()
+m.display_employee()
+m.display_manager()
+
+Output:
+Enter name: sai
+enter employee id:  1234
+Enter department:  it
+name:sai
+Employee id:1234
+Department:it
